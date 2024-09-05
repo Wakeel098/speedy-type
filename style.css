@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:#40404F;
+    
+}
+.hd{
+    display: flex;
+flex-direction: row;
+align-items:center;
+/* justify-content: center; */
+width: 100%;
+height: 52px;
+background-color:rgb(59, 56, 56);
+/* position: absolute; */
+
+}
+
+.lgo{
+    height: 50px;
+    width: 100px;
+    background-color:rgb(59, 56, 56);
+}
+
+ .speedy{
+    color: #F9B434;
+    background-color:rgb(59, 56, 56);
+ }
+ .infoBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 20px 20px 20px;
+ }
+ .buttons{
+    text-align: right;
+ }
+
+ button{
+    padding: 5px  15px;
+    border-radius: 3px;
+    border:0;
+    background-color: rgba(255,255,255,20%);
+    color: rgba(255,255,255,60%);
+    font-weight: bold;
+    cursor: pointer;
+ }
+ .info{
+    font-size: 1.45rem;
+    color:#F9B434 ;
+ }
+
+ 
+
+div.game{
+   line-height: 30px;
+   height: 120px;
+   width: 700px;
+    margin: auto;
+   overflow: hidden;
+   border: 2px solid white;
+   padding: 16px;
+   border-radius: 5px;
+   margin-top: 50px;
+   position: relative;
+
+
+}
+
+div.words{
+   filter: blur(2px)
+}
+
+.game:focus .words{
+   filter: blur(0);
+}
+
+#focus-error {
+   position: absolute;
+   inset: 0; /* Positioning the element to cover the entire .game area */
+   z-index: 10; /* Ensuring it appears on top of other elements */
+   background-color: rgba(64, 64, 79, 0.2); /* Adding a semi-transparent background to make it more noticeable */
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.2rem;
+ }
+ .game:focus #focus-error{
+   display: none;
+ }
+
+ div.word{
+   display: inline-block;
+   font-family: 'Roboto Mono', monospace;
+   color: rgba(255,255,255,50%);
+   margin: 0 5px;
+    
+ }
+
+ .letter.correct{
+   color:rgba(255, 255,255, 1) ;
+ }
+ .letter.incorrect{
+   color:rgb(232, 74, 74) ;
+ }
+@keyframes blink{
+   0%{
+      opacity: 1;
+   }
+   50%{
+      opacity: 0;
+   }
+   100%{
+      opacity: 1;
+   }
+
+}
+
+ .cursor{
+   display: none;
+   width: 2px;
+   height: 1.3rem;
+   background-color:#F9B434 ;
+   position: fixed;
+   top: 170px; 
+   left: 54px;
+   animation: blink 0.3s infinite;
+
+ }
+ .game:focus .cursor{
+   display:block ;
+ }
+
+ 
+ 
+
+ .game.game-over .words{
+   opacity: 0.2;
+   filter: blur(0px);
+ }
+ .game.game-over:focus .cursor{
+   display: none;
+ } 
